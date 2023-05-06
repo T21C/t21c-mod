@@ -69,6 +69,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="info.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Installer.bat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -86,6 +89,6 @@
 if "%25ERRORLEVEL%25"=="0" taskkill /IM "A Dance of Fire and Ice.exe" /F
 copy "$(TargetPath)" "$(GameDirectory)Mods\T21C" /Y
 copy "$(TargetDir)Installer.bat" "$(GameDirectory)Mods\T21C" /Y
-start steam://rungameid/977950</PostBuildEvent>
+copy "$(TargetDir)info.json" "$(GameDirectory)Mods\T21C" /Y</PostBuildEvent>
   </PropertyGroup>
 </Project>
